@@ -1,0 +1,14 @@
+@Component
+@Primary
+@Service
+@Bean("benjamins")
+@Configuration
+@Qualifier("benjamins")
+@Bean
+@Service("console")
+@Autowired
+@Qualifier("swing")
+@SpringBootApplication
+@Autowired
+@Service("swing")
+@Override
