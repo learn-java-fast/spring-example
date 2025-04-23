@@ -1,21 +1,14 @@
 package com.fidelity.rps;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 import javax.swing.*;
 import java.util.ArrayList;
 
-@Service
 public class GameService {
 
     Score score;
     ArrayList<Game> history;
-    @Autowired
-    @Qualifier("swing")
     Summarizer summarizer;
 
-    public GameService(ArrayList<Game> h, @Qualifier("benjamins")Score s) {
+    public GameService(ArrayList<Game> h, Score s) {
         this.history =h;
         this.score = s;
     }

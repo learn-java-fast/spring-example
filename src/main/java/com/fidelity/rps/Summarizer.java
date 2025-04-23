@@ -5,14 +5,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-
 public interface Summarizer {
     public void printSummary();
 }
 
-@Service("console")
 class ConsoleSummarizer implements Summarizer {
     Score score;
     ArrayList<Game> history;
@@ -53,13 +49,11 @@ class ConsoleSummarizer implements Summarizer {
 
 }
 
-
-@Service("swing")
 class SwingSummarizer implements Summarizer {
 
     Score score;
     ArrayList<Game> history;
-    SwingSummarizer(ArrayList<Game> history, @Qualifier("benjamins")Score score) {
+    SwingSummarizer(ArrayList<Game> history, Score score) {
         this.history =history;
         this.score = score;
     }
